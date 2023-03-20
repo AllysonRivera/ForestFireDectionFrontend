@@ -3,15 +3,13 @@ import './Home.css';
 
 const Home = () => { 
   return (
-      <div>
-         <div class = "cont">
-            <div class= "alerts">
-            
-            </div>
-            <div class="map">
+      <div class = "cont">
+        <div class= "alerts">
+        
+        </div>
+        <div class="map">
 
-            </div>
-         </div>
+        </div>
       </div>
     
   )

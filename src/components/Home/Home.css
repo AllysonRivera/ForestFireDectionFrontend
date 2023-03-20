@@ -1,11 +1,20 @@
 .cont{
-    background-color: yellow;
-    width: 100%;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
     margin: 0 0 0 0;
+    display:grid;
+    align-items: center;
+    grid-template-columns: 40% 60%  ;
+    grid-template-areas: 
+    "alerts map"
 }
 .alerts{
-    background-color: red;
-    height: 50px;
-    width: 50px;
+    justify-self: center;
+    grid-area: alerts;
+    background-color: gray;
+    height: 90%;
+    width: 90%;
+    border-radius: 15px;
 }
 
