@@ -1,0 +1,11 @@
+.cont{
+    background-color: yellow;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+.alerts{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
