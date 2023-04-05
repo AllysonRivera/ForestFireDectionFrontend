@@ -9,12 +9,66 @@
     grid-template-areas: 
     "alerts map"
 }
+
 .alerts{
     justify-self: center;
     grid-area: alerts;
-    background-color: gray;
+    background-color: rgb(154, 153, 153);
     height: 90%;
     width: 90%;
     border-radius: 15px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    
 }
 
+.title{
+    font-weight: blod;
+    text-align: center;
+    font-size: 60px;
+}
+
+.fireIcon{
+    color:red;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.info{
+    grid-column: 1/ 2;
+    grid-row: 2 / 2;
+    text-align: left;
+}
+
+.link{
+    grid-column: 2 / 2;
+    grid-row: 1/ 2;
+    font-size: 40px;
+}
+
+.note{
+    display:grid;
+    background-color: black;
+    height: 20%;
+    width: 90%;
+    border-radius: 15px;
+    color: white;
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    grid-template-columns: 70% 28%  ;
+    grid-template-rows: 40% 58%;
+    /* grid-template-areas: 
+    "info links" */
+}
+
+.map-container{
+    width: 50%;
+    height: 50%;
+}
