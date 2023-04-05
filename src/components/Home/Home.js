@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-
+import MapSection from '../map/Map.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFire,faLink} from '@fortawesome/free-solid-svg-icons';
 
@@ -22,8 +22,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div class="map">
-           {/* <Map /> */}
+        <div className='mapArea'>
+          <MapSection location={{lat: 37.42216, lng: -122.08427}} zoomLevel={17} />
         </div>
       </div>
     
@@ -31,4 +31,4 @@ const Home = () => {
 
 }
 
-export default Home
+export default Home;
