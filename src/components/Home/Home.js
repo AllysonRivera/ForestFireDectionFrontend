@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Home.css';
 import MapSection from '../map/Map.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFire,faLink} from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 const cameras = {
   "Hawkins Peak":[38.33412,-120.88257, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-HawkinsPeak", "Central Coast"],
@@ -73,23 +74,43 @@ for(let i = 0; i < cameraArr.length; i++){
 
 
 const Home = () => { 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/alerts").then((response) => {
+      setData(response.data);
+    });
+  }, []);
   return (
       <div className = "cont">
-        <div className= "alerts">
-          <h1 className = "title">Alerts</h1>
-          <div className = "note">          
-            <h2><i className='fireIcon'><FontAwesomeIcon icon={faFire} /></i> Fire Detected</h2>
-            
-            <div className='info'>
-              <p>Region: {region1}</p>
-              <p>Camera: {name1}</p>  
-            </div>
-            
-            <div className='link'>
-              <a href = {web1}> <i className='fireIcon'><FontAwesomeIcon icon={faLink} /></i> </a> 
-            </div>
-         
-          </div> 
+         <div className="alerts">
+        <h1 className="title">Alerts</h1>
+        {data.map((alert) => {
+          if (alert.label === "Fire") {
+            return (
+              <div className="note" key={alert.id}>
+                <h2>
+                  <i className="fireIcon">
+                    <FontAwesomeIcon icon={faFire} /> Fire Detected
+                  </i>{" "}
+                  {alert.message}
+                </h2>
+                <div className="info">
+                  <p>Region: {alert.name}</p>
+                  {/* <p>Camera : {alert.camera}</p> */}
+                </div>
+
+                <div className="link">
+                  <i className="fireIcon">
+                    <FontAwesomeIcon icon={faLink} />
+                  </i>
+                </div>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
         </div>
         <div className='mapArea'> 
           <MapSection location={{lat: 39.60384, lng: -120.10769}} zoomLevel={10} />
