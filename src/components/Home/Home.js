@@ -73,33 +73,33 @@ for(let i = 0; i < cameraArr.length; i++){
 
 
 
-const Home = () => { 
+
+const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/alerts").then((response) => {
+    axios.get("https://dark-darkness-5881.fly.dev/demo").then((response) => {
       setData(response.data);
     });
   }, []);
+
   return (
-      <div className = "cont">
-         <div className="alerts">
+    <div className="cont">
+      <div className="alerts">
         <h1 className="title">Alerts</h1>
-        {data.map((alert) => {
+        {Object.values(data).map((alert,index) => {
           if (alert.label === "Fire") {
             return (
-              <div className="note" key={alert.id}>
+              <div className="note" key={index}>
                 <h2>
                   <i className="fireIcon">
                     <FontAwesomeIcon icon={faFire} /> Fire Detected
                   </i>{" "}
-                  {alert.message}
                 </h2>
                 <div className="info">
                   <p>Region: {alert.name}</p>
                   {/* <p>Camera : {alert.camera}</p> */}
                 </div>
-
                 <div className="link">
                   <i className="fireIcon">
                     <FontAwesomeIcon icon={faLink} />
@@ -107,18 +107,14 @@ const Home = () => {
                 </div>
               </div>
             );
-          } else {
-            return null;
           }
         })}
-        </div>
-        <div className='mapArea'> 
-          <MapSection location={{lat: 39.60384, lng: -120.10769}} zoomLevel={10} />
-        </div>
       </div>
-    
-  )
-
-}
+      <div className="mapArea">
+        <MapSection location={{ lat: 37.42216, lng: -122.08427 }} zoomLevel={17} />
+      </div>
+    </div>
+  );
+};
 
 export default Home;
