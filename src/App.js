@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Navbar from './components/Navbar/Navbar';
+import ResetUserDetails from './components/UpdateDetails';
 
 
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/about" element={<About />}></Route>
-
+          <Route path="/update" element={<ResetUserDetails/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
