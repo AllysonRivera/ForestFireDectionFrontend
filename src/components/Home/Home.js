@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Home.css';
 import MapSection from '../map/Map.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFire,faLink} from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 const cameras = {
   "Hawkins Peak":[38.33412,-120.88257, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-HawkinsPeak", "Central Coast"],
@@ -70,36 +71,51 @@ for(let i = 0; i < cameraArr.length; i++){
     region1 = cameraArr[i].region;
   }
 }
-console.log({name1});
-console.log(lat1);
-console.log({lng1});
 
-const Home = () => { 
+
+
+
+const Home = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://dark-darkness-5881.fly.dev/demo").then((response) => {
+      setData(response.data);
+    });
+  }, []);
+
   return (
-      <div className = "cont">
-        <div className= "alerts">
-          <h1 className = "title">Alerts</h1>
-          <div className = "note">          
-            <h2><i className='fireIcon'><FontAwesomeIcon icon={faFire} /></i> Fire Detected</h2>
-            
-            <div className='info'>
-              <p>Region: {region1}</p>
-              <p>Camera: {name1}</p>  
-            </div>
-            
-            <div className='link'>
-              <a href = {web1}> <i className='fireIcon'><FontAwesomeIcon icon={faLink} /></i> </a> 
-            </div>
-         
-          </div> 
-        </div>
-        <div className='mapArea'> 
-          <MapSection location={{lat: lat1, lng:  lng1}} zoomLevel={10} />
-        </div>
+    <div className="cont">
+      <div className="alerts">
+        <h1 className="title">Alerts</h1>
+        {Object.values(data).map((alert,index) => {
+          if (alert.label === "Fire") {
+            return (
+              <div className="note" key={index}>
+                <h2>
+                  <i className="fireIcon">
+                    <FontAwesomeIcon icon={faFire} /> Fire Detected
+                  </i>{" "}
+                </h2>
+                <div className="info">
+                  <p>Region: {alert.name}</p>
+                  {/* <p>Camera : {alert.camera}</p> */}
+                </div>
+                <div className="link">
+                  <i className="fireIcon">
+                    <FontAwesomeIcon icon={faLink} />
+                  </i>
+                </div>
+              </div>
+            );
+          }
+        })}
       </div>
-    
-  )
-
-}
+      <div className="mapArea">
+        <MapSection location={{ lat: 37.42216, lng: -122.08427 }} zoomLevel={17} />
+      </div>
+    </div>
+  );
+};
 
 export default Home;
