@@ -19,13 +19,9 @@
   }
   
   .pin-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: red;
     
-  }
-  
-  .pin-text {
-    font-size: 1.3em;
   }
   
   @media screen and (min-width: 799px) {
@@ -42,7 +38,5 @@
       width: 15vw;
     }
   
-    .pin-icon {
-      font-size: 10vw;
-    }
+
   }

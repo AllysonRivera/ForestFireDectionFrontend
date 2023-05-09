@@ -12,9 +12,9 @@ const LocationPin = ({ text }) => (
   </div>
 )
 
-const Map = ({ location, zoomLevel }) => (
+const Map = ({ location, zoomLevel }) => {return (
   <div className="map">
-    <h2 className="map-h2">Cameras</h2>
+    <h2 className="map-h2"></h2>
 
     <div className="google-map">
       <GoogleMapReact
@@ -30,6 +30,6 @@ const Map = ({ location, zoomLevel }) => (
       </GoogleMapReact>
     </div>
   </div>
-)
+)}
 
 export default Map

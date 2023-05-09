@@ -32,6 +32,7 @@ const cameras = {
   "Mt. Diablo West": [37.83288, -121.97081, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-MtDiabloWest","Central Coast"],
   "Rockpile": [38.68344, -122.98688, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-Rockpile","Central Coast"],
   "Mt. Konocti": [39.01365, -122.84962, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-Konocti", "Central Coast"],
+  "Neher Montana Field Station": [46.75006, -113.41762, "https://www.alertwildfire.org/region/montana/?camera=Axis-NeherMontanaFieldStation", "Montana"]
 }
 
 const cameraArr = [];
@@ -58,7 +59,7 @@ for(var camera_name in cameras) {
 }
 
 // const Gibraltar2 = new Camera("Gibraltar2", 34.46501, -119.67852, "https://www.alertwildfire.org/region/centralcoast/?camera=Axis-Gibraltar2", "CentralCoast");
-var cameraTry = "Babbitt Peak";
+var cameraTry =  "Rockpile";
 
 for(let i = 0; i < cameraArr.length; i++){
   if(cameraArr[i].name == cameraTry){
@@ -69,8 +70,9 @@ for(let i = 0; i < cameraArr.length; i++){
     region1 = cameraArr[i].region;
   }
 }
-
-
+console.log({name1});
+console.log(lat1);
+console.log({lng1});
 
 const Home = () => { 
   return (
@@ -92,7 +94,7 @@ const Home = () => {
           </div> 
         </div>
         <div className='mapArea'> 
-          <MapSection location={{lat: 39.60384, lng: -120.10769}} zoomLevel={10} />
+          <MapSection location={{lat: lat1, lng:  lng1}} zoomLevel={10} />
         </div>
       </div>
     

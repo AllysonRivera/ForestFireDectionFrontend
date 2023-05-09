@@ -1,0 +1,57 @@
+.section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: lightgrey;
+
+}
+.section1{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+
+.heading{
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h6{
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.underline{
+    height: 04px;
+    width: 7rem;
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.underline1{
+    height: 04px;
+    width: 9rem;
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: 20px;
+    
+}
+
+.par{
+    font-size: 20px;
+    text-align: left;
+    text-indent: 5%;
+}
+
+.col-md-4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
