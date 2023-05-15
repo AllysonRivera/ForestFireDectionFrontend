@@ -65,7 +65,8 @@ const About= () => {
                       <h6>Dante Moon</h6>
                       <div className='underline1 mx-auto'></div>
                       <p>
-                        add about text
+                      I'm a fourth year computer science student at CSUMB with a concentration in data science. 
+                      For this project I primarily worked on the back end, collecting data, training models, and building an API to enable communication between the front end and back end.
                       </p>
                     </div>
                   </div>      
@@ -79,7 +80,10 @@ const About= () => {
                       <h6>Allyson Rivera</h6>
                       <div className='underline1 mx-auto'></div>
                       <p>
-                        add about text
+                        I am a 4th year Computer Science major at CSUMB with a concentration in software engineering. 
+                        For this porject I designed and developed the web application.
+                        I also created the camera database and used GoogleAPI to show the cameras location.
+
                       </p>
                     </div>
                   </div>      
@@ -93,7 +97,8 @@ const About= () => {
                       <h6>Nico Hartojo</h6>
                       <div className='underline1 mx-auto'></div>
                       <p>
-                        add about text
+                      I am currently wrapping up my last semester at California State University, Monterey Bay and am studying Computer Science with a concentration in Data Science. I am originally from Colorado and play for CSUMB’s baseball team. 
+                      As a data scientist, I primarily worked on the machine learning model used to detect fires in the ALERTWildfire camera feeds.
                       </p>
                     </div>
                   </div>      
@@ -107,7 +112,9 @@ const About= () => {
                       <h6>Prajwal Pisal</h6>
                       <div className='underline1 mx-auto'></div>
                       <p>
-                        add about text
+                      I am a senior studying Computer Science with a focus on Software Engineering at CSUMB. 
+                      I contributed to the project by connecting the live API to the frontend, enabling the system to generate fire alerts using a machine learning model. 
+                      Additionally, I created the "About" section page, allowing users to modify their password and customize their location for personalized forest fire alerts.
                       </p>
                     </div>
                   </div>      
